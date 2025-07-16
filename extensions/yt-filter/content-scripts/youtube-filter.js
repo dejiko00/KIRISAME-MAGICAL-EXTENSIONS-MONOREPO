@@ -7,6 +7,7 @@
 // @run-at       document-start
 
 // ==/UserScript==
+
 (async () => {
   const code = () => {
     class _YoutubeFilters {
