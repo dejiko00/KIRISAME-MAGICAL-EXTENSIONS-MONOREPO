@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "web-ext run",
+    "serve": "tsc -w",
+    "watch": "node web-ext.run.mjs",
+    "build": "tsc",
     "lint": "web-ext lint"
   },
   "keywords": [],

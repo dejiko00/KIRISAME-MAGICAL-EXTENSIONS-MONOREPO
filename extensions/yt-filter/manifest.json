@@ -1,15 +1,16 @@
 {
+  "$schema": "https://json.schemastore.org/webextension.json",
   "name": "Youtube Filter",
   "version": "0.1",
-  "description": "Altering HTTP responses",
   "manifest_version": 3,
+  "description": "Altering HTTP responses",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/http-response",
   "permissions": [
-    "https://www.youtube.com/*",
     "scripting",
     "storage",
     "webRequest",
-    "webRequestBlocking"
+    "webRequestBlocking",
+    "webRequestFilterResponse"
   ],
   "action": {
     "default_title": "Youtube Filter",
@@ -17,25 +18,13 @@
   },
   "background": {
     "scripts": ["background/background.js"],
-    "service_worker": "background.js"
+    "service_worker": "background/background.js"
   },
   "content_scripts": [
     {
       "run_at": "document_start",
       "matches": ["https://www.youtube.com/*"],
-      "js": ["content-scripts/content_script.js"]
+      "js": ["content-scripts/content-script.js"]
     }
-  ],
-  "web_accessible_resources": [
-    {
-      "matches": ["https://www.youtube.com/*"],
-      "resources": ["**/*", "*"]
-    }
-  ],
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{b6b8a44a-b6d7-42e2-ba01-636632196d01}",
-      "strict_min_version": "102.0"
-    }
-  }
+  ]
 }

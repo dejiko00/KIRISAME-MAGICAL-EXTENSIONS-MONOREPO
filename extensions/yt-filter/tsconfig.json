@@ -6,7 +6,6 @@
     "module": "es2022",
     "moduleResolution": "bundler",
     "outDir": "dist",
-    "tsBuildInfoFile": "dist/.tsbuildinfo",
-    "types": ["firefox-webext-browser"]
+    "tsBuildInfoFile": "dist/.tsbuildinfo"
   }
 }
