@@ -1,10 +1,11 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["background", "content-scripts"],
+  "extends": ["../../tsconfig.json"],
+  "include": ["src/**/*.ts"],
   "exclude": ["dist"],
   "compilerOptions": {
     "module": "es2022",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
+    "rootDir": "src",
     "outDir": "dist",
     "tsBuildInfoFile": "dist/.tsbuildinfo"
   }

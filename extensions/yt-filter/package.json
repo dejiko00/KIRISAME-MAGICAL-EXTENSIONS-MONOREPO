@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "tsc -w",
-    "watch": "node web-ext.run.mjs",
-    "build": "tsc",
-    "lint": "web-ext lint"
+    "clean": "rm -rf dist",
+    "watch-web": "node ../../.web-ext/web-ext-run.mjs",
+    "watch-roll": "pnpm clean && rollup --log-level info -cw",
+    "build": "pnpm clean && rollup -c",
+    "lint-web": "web-ext lint"
   },
   "keywords": [],
   "author": "",

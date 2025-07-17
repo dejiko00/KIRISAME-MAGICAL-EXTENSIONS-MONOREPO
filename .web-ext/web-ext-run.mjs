@@ -1,6 +1,5 @@
 // @ts-check
-/// <reference path="../../types/web-ext.d.ts" />
-
+/// <reference path="../types/web-ext.d.ts" />
 import webExt from "web-ext";
 
 webExt.cmd
