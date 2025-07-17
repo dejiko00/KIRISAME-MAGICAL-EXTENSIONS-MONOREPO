@@ -4,13 +4,25 @@ QoL extensions to make 2025 internet browsing a saner experience.
 
 ## 🧹 What does this (currently) do?
 
-- Filters low quality videos away from youtube
-- Automagically does the _Not Interested_ flow for those terrible videos so you don't have to see them ever again.
+Automagically does the _Not Interested_ flow for terrible videos and channels, then hides them so you don't have to see them ever again.
+
+As a bonus it also removes shorts and ad suggestions (if you're not using an adblocker).
+
+### Filter Categories
+
+1. Channels
+2. Individuals
+3. Current Events
+4. Scam
+5. Clickbait
+6. Custom regex patterns
+
+### Channel Quality Scoring Database (future)
 
 ## 🧹 Why should I use it?
 
 - User: You can blacklist several youtube video patterns
-- Developer: As an extension template, so you don't have to use the **HORRIBLE** bloat that extension ""frameworks"" give.
+- Developer: As an extension template, so you don't have to use the **HORRIBLE** bloat that certain extension ""frameworks"" give.
 
 ## 🧹 TODO
 
