@@ -5,12 +5,11 @@
     "moduleResolution": "node",
     "lib": ["ES2022", "DOM"],
     "types": ["firefox-webext-browser"],
-    //"allowSyntheticDefaultImports": false,
-    //"importHelpers": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "composite": true,
     "skipLibCheck": true
   }
