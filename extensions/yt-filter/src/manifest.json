@@ -12,19 +12,27 @@
     "webRequestBlocking",
     "webRequestFilterResponse"
   ],
+  "host_permissions": ["https://www.youtube.com/*"],
   "action": {
     "default_title": "Youtube Filter",
     "default_popup": "index.html"
   },
   "background": {
-    "scripts": ["background/background.js"],
-    "service_worker": "background/background.js"
+    "scripts": ["background/index.js"],
+    "service_worker": "background/index.js"
   },
   "content_scripts": [
     {
       "run_at": "document_start",
       "matches": ["https://www.youtube.com/*"],
-      "js": ["content-scripts/content-script.js"]
+      "js": ["content-scripts/index.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "resources": ["**/*", "*"],
+      "use_dynamic_url": true
     }
   ]
 }

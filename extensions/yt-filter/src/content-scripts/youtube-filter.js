@@ -168,6 +168,7 @@
           "Mental Outlaw",
           "Explains",
           "midudev",
+          "Farid Dieck",
         ],
       })
       .build();
@@ -307,13 +308,13 @@
         if (this.isContextInit && this.#regex.routesVideo.test(url)) {
           _YoutubeUtils.log("Hook | New Videos", url);
 
-          let items = document.querySelectorAll(
+          const items = document.querySelectorAll(
             "#contents>ytd-rich-item-renderer, #contents>ytd-rich-section-renderer"
           );
 
           this.#lockScroll();
           let registeredCount = 0;
-          for (let [index, item] of items.entries()) {
+          for (const [index, item] of items.entries()) {
             const ytItem = new _YoutubeItem(item);
             if (
               ytItem.type === "video" &&

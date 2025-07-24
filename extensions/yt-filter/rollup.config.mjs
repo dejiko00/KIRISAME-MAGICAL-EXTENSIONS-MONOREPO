@@ -1,15 +1,31 @@
-import { globSync } from "node:fs";
+import { relative } from "node:path";
 import typescript from "@rollup/plugin-typescript";
 import { defineConfig } from "rollup";
 import { copyFilesPlugin } from "../../.rollup/rollup-plugin-copy.mjs";
 
+const sourceFolder = "src";
+
+const inputFiles = {
+  contentScripts: `${sourceFolder}/content-scripts/index.ts`,
+  background: `${sourceFolder}/background/index.ts`,
+};
+
+const outputFilenames = Object.entries(inputFiles).reduce((acc, [key, val]) => {
+  acc[key] = relative(sourceFolder, val).replace(".ts", ".js");
+  return acc;
+}, {});
+
 export default defineConfig({
-  input: [...globSync("src/**/*.ts")],
+  input: {
+    contentScripts: `${sourceFolder}/content-scripts/index.ts`,
+    background: `${sourceFolder}/background/index.ts`,
+  },
   output: {
     dir: "dist",
     format: "esm",
-    preserveModules: true,
-    preserveModulesRoot: "src",
+    entryFileNames: (chunk) => {
+      return outputFilenames[chunk.name] || "[name].js";
+    },
     sourcemap: true,
   },
   watch: {},
